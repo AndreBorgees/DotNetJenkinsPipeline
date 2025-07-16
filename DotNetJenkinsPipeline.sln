@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36202.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetJenkinsPipeline", "src\services\GitHubActionsWithDotNet.API\DotNetJenkinsPipeline.csproj", "{54C2BD69-6C77-FE9F-9FFF-EACE32087BBB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{DBBDAA0B-EC91-4134-BE41-F4C212917EDC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DotNetJenkinsPipeline", "DotNetJenkinsPipeline", "{C760176D-3CE1-428C-BAC4-F569D1CA7592}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54C2BD69-6C77-FE9F-9FFF-EACE32087BBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54C2BD69-6C77-FE9F-9FFF-EACE32087BBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54C2BD69-6C77-FE9F-9FFF-EACE32087BBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54C2BD69-6C77-FE9F-9FFF-EACE32087BBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{54C2BD69-6C77-FE9F-9FFF-EACE32087BBB} = {C760176D-3CE1-428C-BAC4-F569D1CA7592}
+		{DBBDAA0B-EC91-4134-BE41-F4C212917EDC} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C760176D-3CE1-428C-BAC4-F569D1CA7592} = {DBBDAA0B-EC91-4134-BE41-F4C212917EDC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70CD679A-931A-467D-A016-9DB200C29752}
+	EndGlobalSection
+EndGlobal
