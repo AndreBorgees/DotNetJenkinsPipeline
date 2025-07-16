@@ -10,24 +10,18 @@ Este é um projeto de exemplo em .NET criado com o objetivo de testar e validar 
 
 ## 🧱 Tecnologias utilizadas
 
-- ASP.NET Core
+- ASP.NET
 - Docker
 - Jenkins
 - Git
-- C# 10
+- C#
 - Domain-Driven Design (DDD)
 - Clean Code
 
 ## 🔧 O que o projeto contém
 
 - Uma API .NET com um Value Object de CPF, implementando validação, imutabilidade e boas práticas de DDD
-- Estrutura básica para aplicar CI/CD localmente com Jenkins (você pode adicionar o Jenkinsfile e setup de volume/agent)
-
-## 📦 Possíveis evoluções
-
-- Adicionar pipeline completo com Jenkinsfile
-- Incluir testes unitários e execução via pipeline
-- Configurar build Docker automático e deploy em ambiente local
+- Estrutura básica para aplicar CI/CD localmente com Jenkins.
 
 ## 🚀 Como usar
 
