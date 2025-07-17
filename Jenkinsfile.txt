@@ -1,14 +1,12 @@
-*/1 * * * *
-
 pipeline {
-    agent any
+    agent { label 'windows' }
     environment {
         dotnet = 'C:\\Program Files\\dotnet\\dotnet.exe'
     }
     stages {
         stage('Checkout Stage') {
             steps {
-                git credentialsId: '6894377b-0e03-4d69-8f5f-badca8ffe6a7', url: 'https://github.com/AndreBorgees/DotNetJenkinsPipeline.git', branch: 'main'
+                git credentialsId: '*****', url: '****', branch: 'main'
             }
         }
         stage('Build Stage') {
@@ -18,16 +16,16 @@ pipeline {
         }
         stage("Release Stage") {
             steps {
-                bat 'dotnet build  %WORKSPACE%\\DotNetJenkinsPipeline.sln /p:PublishProfile=" %WORKSPACE%\\DotNetJenkinsPipeline\\Properties\\PublishProfiles\\JenkinsProfile.pubxml" /p:Platform="Any CPU" /p:DeployOnBuild=true /m'
+                bat 'dotnet build  %WORKSPACE%\\DotNetJenkinsPipeline.sln /p:PublishProfile=" %WORKSPACE%\\src\\services\\GitHubActionsWithDotNet.API\\Properties\\PublishProfiles\\JenkinsProfile.pubxml" /p:Platform="Any CPU" /p:DeployOnBuild=true /m'
             }
         }
         stage('Deploy Stage') {
             steps {
-                 // Stop IIS
+                // Stop IIS
                 bat 'net stop "w3svc"'
     
                 //Deploy application on IIS
-                bat '"C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe" -verb:sync -source:package="%WORKSPACE%\\DotNetJenkinsPipeline\\bin\\Debug\\net5.0\\DotNetJenkinsPipeline.zip" -dest:auto -setParam:"IIS Web Application Name"="DotNetJenkinsPipeline" -skip:objectName=filePath,absolutePath=".\\\\PackageTmp\\\\Web.config$" -enableRule:DoNotDelete -allowUntrusted=true'
+                bat '"C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe" -verb:sync -source:package="%WORKSPACE%\\src\\services\\GitHubActionsWithDotNet.API\\bin\\Debug\\net5.0\\DotNetJenkinsPipeline.zip" -dest:auto -setParam:"IIS Web Application Name"="DotNetJenkinsPipeline" -skip:objectName=filePath,absolutePath=".\\\\PackageTmp\\\\Web.config$" -enableRule:DoNotDelete -allowUntrusted=true'
                 
                 // Start IIS again
                 bat 'net start "w3svc"'
